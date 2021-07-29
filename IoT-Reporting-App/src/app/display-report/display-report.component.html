@@ -1,0 +1,39 @@
+<div align="center">
+  <div style="width:75%;margin-left:50px;margin-right:50px" *ngIf="reportData && reportData.length != 0">
+    <mat-table [dataSource]="reportData" class="mat-elevation-z8">
+      <!-- Temperature Column -->
+      <ng-container matColumnDef="temperature">
+        <mat-header-cell *matHeaderCellDef> Temperature </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.temperature}} </mat-cell>
+      </ng-container>
+    
+      <!-- Pressure Column -->
+      <ng-container matColumnDef="pressure">
+        <mat-header-cell *matHeaderCellDef> Pressure </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.pressure}} </mat-cell>
+      </ng-container>
+    
+      <!-- Humidity Column -->
+      <ng-container matColumnDef="humidity">
+        <mat-header-cell *matHeaderCellDef> Humidity </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.humidity}} </mat-cell>
+      </ng-container>
+    
+      <!-- Date Column -->
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+      </ng-container>
+    
+      <!-- Table Header -->
+      <mat-header-row *matHeaderRowDef="reportColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: reportColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>
+<div align="center" style="color: red" *ngIf="reportData && reportData.length == 0">
+  No records found.
+</div>
+<div align="center" style="color: red" *ngIf="reportData == null">
+  Invalid Tabular Report Data.
+</div>

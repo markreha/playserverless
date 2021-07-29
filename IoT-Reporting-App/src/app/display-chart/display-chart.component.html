@@ -1,0 +1,22 @@
+<div align="center">
+  <div style="width:50%" *ngIf="reportData && reportData.length != 0">
+    <div style="display: block;">
+      <canvas baseChart 
+        [datasets]="lineChartData"
+        [labels]="lineChartLabels"
+        [options]="lineChartOptions"
+        [colors]="lineChartColors"
+        [legend]="lineChartLegend"
+        [chartType]="lineChartType"
+        [plugins]="lineChartPlugins">
+      </canvas>
+    </div>
+  </div>
+</div>
+
+<div align="center" style="color: red" *ngIf="reportData && reportData.length == 0">
+  No records found.
+</div>
+<div align="center" style="color: red" *ngIf="reportData == null">
+  Invalid Chart Report Data.
+</div>

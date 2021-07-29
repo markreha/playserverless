@@ -1,0 +1,33 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav 
+      #drawer 
+      class="sidenav" 
+      fixedInViewport="true"
+      [attr.role]="enableSidedrawer ? ((isHandset$ | async) ? 'dialog' : 'navigation') : 'dialog'"
+      [mode]="enableSidedrawer ? ((isHandset$ | async) ? 'over' : 'side') : 'over'"
+      [opened]="enableSidedrawer ? (!(isHandset$ | async)) : false">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="./">Home</a>
+      <a mat-list-item href="https://github.com/markreha/cloudworkshop/tree/master/sdk" target="_blank">SDK</a>
+      <a mat-list-item href="https://github.com/markreha" target="_blank">GitHub</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="enableSidedrawer ? (isHandset$ | async) : true">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class="logo-img"><img src="assets/images/logo-sm.jpg" height="45px" style="padding-top: 7px; padding-right: 10px; " alt="logo"/></div>
+      <span style="font-weight: normal; font-size: 16px;text-transform: uppercase;">The Cloud Workshop</span>
+      <span class="spacer"></span>
+      <a href="#" onclick="alert('IoT Reporting Application (Serverless) \nVersion: 1.00\n')">About</a>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

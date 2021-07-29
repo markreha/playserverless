@@ -1,0 +1,42 @@
+      <div align="center" style="margin-left:50px;margin-right:50px" *ngIf="!wasSubmitted">
+        <form (ngSubmit)="onSubmit()" [formGroup]="reportForm" ngNativeValidate>
+          <mat-form-field appearance="standard" [style.width.px]=250>
+            <mat-label>Report Type</mat-label>
+            <select id="reportType" formControlName="reportType" matNativeControl required>
+              <option value="0">Table</option>
+              <option value="1">Chart</option>
+            </select>
+            <mat-hint>Please select the Report Type</mat-hint>
+          </mat-form-field>
+          <br/><br/>
+          <mat-form-field appearance="standard" [style.width.px]=250>
+            <mat-label>Start Date</mat-label>
+            <input id="fromDate" formControlName="fromDate" matInput placeholder="Input" type="datetime-local" required>
+            <mat-hint>Please select the Report Start Date</mat-hint>
+          </mat-form-field>
+          <br/><br/>
+          <mat-form-field appearance="standard" [style.width.px]=250>
+            <mat-label>End Date</mat-label>
+            <input id="toDate" formControlName="toDate" matInput placeholder="Input" type="datetime-local" required>
+            <mat-hint>Please select the Report End Date</mat-hint>
+          </mat-form-field>
+          <br/><br/>
+          <mat-form-field appearance="standard" [style.width.px]=250>
+            <mat-label>IoT Device</mat-label>
+            <select id="deviceId" value="0" formControlName="deviceId" matNativeControl required>
+              <option value="0">Raspberry Pi</option>
+              <option value="1">Arduino</option>
+            </select>
+            <mat-hint>Please select the IoT Device</mat-hint>
+          </mat-form-field>
+          <br/><br/>
+          <div class="button-wrapper">
+            <button mat-flat-button color="primary">Display</button>
+          </div>
+        </form>
+      </div>
+      <div  *ngIf="wasSubmitted">
+        Weather was request was submitted successfully.
+      </div>
+
+
