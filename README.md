@@ -8,6 +8,7 @@ What is a Serverless Architecture?
 | -----------:|
 | Martin Fowler 2018
 
+A great article on this Architecture Style can be found [here](https://martinfowler.com/articles/serverless.html).
 
 <p align="center">
 	<img src="https://github.com/markreha/playserverless/blob/main/Doc/Azure%20Serverless%20Example.jpg" alt="Example Serverless Architecture"/>
