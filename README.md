@@ -10,6 +10,9 @@ What is a Serverless Architecture?
 
 A great article on this Architecture Style can be found [here](https://martinfowler.com/articles/serverless.html).
 
+The following is a logical architecture diagram of the example in this repository (along with all of the source code):
+
 <p align="center">
 	<img src="https://github.com/markreha/playserverless/blob/main/Doc/Azure%20Serverless%20Example.jpg" alt="Example Serverless Architecture"/>
 </p>
+
