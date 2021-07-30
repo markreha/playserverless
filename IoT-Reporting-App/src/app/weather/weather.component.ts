@@ -23,7 +23,7 @@ export class WeatherComponent implements OnInit
   {
     // Setup default dates
     let fromDate = new Date();
-    fromDate.setHours(0);
+    fromDate.setHours(-fromDate.getTimezoneOffset()/60);
     fromDate.setMinutes(0);
     fromDate.setSeconds(0);
     fromDate.setMilliseconds(0);
@@ -33,8 +33,8 @@ export class WeatherComponent implements OnInit
     {
       // Set the default values for the Report Search Form
       'reportType': new FormControl("0"),
-      'fromDate': new FormControl(fromDate.toISOString()),
-      'toDate': new FormControl(toDate.toISOString()),
+      'fromDate': new FormControl(fromDate.toISOString().slice(0, -1)),
+      'toDate': new FormControl(toDate.toISOString().slice(0, -1)),
       'deviceId': new FormControl("0")
     });
     this.wasSubmitted = false;
